@@ -1,6 +1,5 @@
 const db = require('../config/dbConfig');
 
-// Create a task
 const createTask = (taskData, userId) => {
   return new Promise((resolve, reject) => {
     const { title, description, status } = taskData;
@@ -17,7 +16,6 @@ const createTask = (taskData, userId) => {
   });
 };
 
-// Get tasks for a user
 const getTasksByUser = (userId) => {
   return new Promise((resolve, reject) => {
     const query = 'SELECT * FROM tasks WHERE user_id = ?';
@@ -28,7 +26,6 @@ const getTasksByUser = (userId) => {
   });
 };
 
-// Update a task
 const updateTask = (taskId, updatedData) => {
   return new Promise((resolve, reject) => {
     const { title, description, status } = updatedData;
@@ -40,7 +37,6 @@ const updateTask = (taskId, updatedData) => {
   });
 };
 
-// Delete a task
 const deleteTask = (taskId) => {
   return new Promise((resolve, reject) => {
     const query = 'DELETE FROM tasks WHERE id = ?';

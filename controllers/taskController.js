@@ -2,7 +2,7 @@ const taskModel = require('../models/taskModel');
 
 const createTask = (req, res) => {
   const { title, description, status } = req.body;
-  const userId = req.userId;  // Extract userId from the token (middleware)
+  const userId = req.userId;  
 
   taskModel.createTask({ title, description, status }, userId)
     .then(newTask => {

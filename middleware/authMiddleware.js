@@ -13,7 +13,7 @@ const verifyToken = (req, res, next) => {
       return res.status(401).json({ message: 'Invalid or expired token' });
     }
 
-    req.userId = decoded.userId;  // Attach the userId to the request
+    req.userId = decoded.userId; 
     next();
   });
 };
